@@ -10,7 +10,7 @@ const NewExpense = (props) => {
   const saveExpenseDataHanadler = (enteredeExpenseData) => {
     const expenseData = {
       ...enteredeExpenseData,
-      id: Math.random().toString()
+      id: Math.random.toString()
     }
     props.onAddExpense(expenseData);
     setIsEditing(false);
