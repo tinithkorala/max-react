@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import QUESTIONS from './../questions.js';
 import quizCompleteImg from './../assets/quiz-complete.png';
+import QuestionTimer from './QuestionTimer.jsx';
 
 const Quize = () => {
 
@@ -31,6 +32,10 @@ const Quize = () => {
   return (
     <div id='quiz'>
       <div id='question'>
+        <QuestionTimer
+          timeout={10000}
+          onTimeOut={() => handleSelectAnswer(null)}
+        />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id='answers'>
           {
