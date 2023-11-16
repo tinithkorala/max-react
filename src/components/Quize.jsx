@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 import QUESTIONS from './../questions.js';
 import quizCompleteImg from './../assets/quiz-complete.png';
@@ -11,11 +11,13 @@ const Quize = () => {
   const activeQuestionIndex = userAnswers.length;
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
-  function handleSelectAnswer(selectedAnswer) {
+  const handleSelectAnswer = useCallback(function handleSelectAnswer(selectedAnswer) {
     setUserAnswers(preUserAnswer => {
       return [...preUserAnswer, selectedAnswer];
     });
-  }
+  }, []);
+
+  const handleSkipAnser = useCallback(() => handleSelectAnswer(null), [handleSelectAnswer]);
 
   if(quizIsComplete) {
     return (
@@ -34,7 +36,7 @@ const Quize = () => {
       <div id='question'>
         <QuestionTimer
           timeout={10000}
-          onTimeOut={() => handleSelectAnswer(null)}
+          onTimeOut={handleSkipAnser}
         />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id='answers'>
