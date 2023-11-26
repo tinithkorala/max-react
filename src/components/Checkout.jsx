@@ -20,7 +20,7 @@ const Checkout = () => {
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
 
-  const { data, isLoading: isSending, error, sendRequest } = useHttp('http://localhost:3000/orders', requestConfig);
+  const { data, isLoading: isSending, error, sendRequest, clearData } = useHttp('http://localhost:3000/orders', requestConfig);
 
   const cartTotal = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
@@ -29,6 +29,12 @@ const Checkout = () => {
 
   function handleClose() {
     userProgressCtx.hideCheckout();
+  }
+
+  function handleFinish() {
+    userProgressCtx.hideCheckout();
+    cartCtx.clearCart();
+    clearData();
   }
 
   function handleSubmit(event) {
@@ -59,13 +65,24 @@ const Checkout = () => {
 
   let actions = (
     <>
-      <Button type="button" textOnly>Close</Button>
+      <Button type="button" textOnly onClick={handleClose}>Close</Button>
       <Button>Submit Order</Button>
     </>
   )
 
   if(isSending) {
     actions = <span>Sending order data...</span>;
+  }
+
+  if(data && !error) {
+    return <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleFinish}>
+      <h2>Success !</h2>
+      <p>Your order was submitted successfully</p>
+      <p>We will readout you next few minutes</p>
+      <p className='modal-actions'>
+        <Button onClick={handleFinish}>Okay</Button>
+      </p>
+    </Modal>
   }
 
   return (
