@@ -4,9 +4,9 @@ function Button({ children, textOnly, cssName, ...props }) {
   let cssClasses = textOnly ? "text-button" : "button";
   cssClasses += " " + cssName;
   return (
-    <butto className={cssClasses} {...props}>
+    <button className={cssClasses} {...props}>
       {children}
-    </butto>
+    </button>
   );
 }
 
