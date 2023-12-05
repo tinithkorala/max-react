@@ -1,0 +1,22 @@
+{
+  "name": "max-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "redux-demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/tinithkorala/max-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tinithkorala/max-react/issues"
+  },
+  "homepage": "https://github.com/tinithkorala/max-react#readme",
+  "dependencies": {
+    "redux": "^5.0.0"
+  }
+}
