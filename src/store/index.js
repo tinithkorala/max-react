@@ -24,15 +24,27 @@ const cartReducer = (state = initialState, action) => {
       cart: updatedItems,
       totalQuantity: state.totalQuantity + 1
     }
-    // console.log(action.payload);
-    // return {
-    //   ...state,
-    //   items: action.payload
-    // }
   }
-  // if(action.type === 'REMOVE_ITEM') {
+  if(action.type === 'REMOVE_ITEM') {
+    const id = action.payload;
+    const existingCartItemIndex = state.cart.findIndex(item => item.id === id);
+    const existingCartItem = state.cart[existingCartItemIndex];
+    const updatedItems = [...state.cart];
 
-  // }
+    if(existingCartItem.quantity === 1) {
+      updatedItems.splice(existingCartItemIndex, 1);
+    }else {
+      const updatedItem = {
+        ...existingCartItem,
+        quantity: existingCartItem.quantity - 1
+      }
+      updatedItems[existingCartItemIndex] = updatedItem;
+    }
+    return {
+      ...state,
+      cart: updatedItems
+    }
+  }
   return state;
 }
 
