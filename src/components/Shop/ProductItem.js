@@ -6,10 +6,10 @@ const ProductItem = (props) => {
 
   const dispatch = useDispatch();
 
-  const { title, price, description } = props;
+  const {id, title, price, description } = props;
 
   const addToCartHandler = () => {
-    dispatch({type: 'ADD_ITEM', payload: {title, price, description}});
+    dispatch({type: 'ADD_ITEM', payload: {id, title, price}});
   }
 
   return (
