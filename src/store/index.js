@@ -7,6 +7,7 @@ const initialState = {
 
 const cartReducer = (state = initialState, action) => {
   if(action.type === 'ADD_ITEM') {
+    console.log(state);
     const existingCartItemIndex = state.cart.findIndex(item => item.id === action.payload.id);
     const updatedItems = [...state.cart];
     if(existingCartItemIndex > -1) {
@@ -21,7 +22,7 @@ const cartReducer = (state = initialState, action) => {
     }
     return {
       ...state,
-      items: updatedItems,
+      cart: updatedItems,
       totalQuantity: state.totalQuantity + 1
     }
     // console.log(action.payload);
