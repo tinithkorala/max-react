@@ -7,8 +7,6 @@ const Error = () => {
 
   const error = useRouteError();
 
-  console.log("errors", error);
-
   let title = 'An error occurred';
   let message = 'Something went wrong';
 
