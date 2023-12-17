@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"zzzzzzzz","image":"https://upload.wikimedia.org/wikipedia/commons/1/14/The_Event_2010_Intertitle.svg","date":"2023-12-12","description":"dsdss","id":"188d6976-0da3-4f04-b77e-bcd7e773ea6c"},{"title":"lk","image":"https://upload.wikimedia.org/wikipedia/commons/1/14/The_Event_2010_Intertitle.svg","date":"2023-12-23","description":"511","id":"b34131f0-3a5b-4bdb-88f1-f0e1ec8401a9"},{"title":"sdc","image":"https://upload.wikimedia.org/wikipedia/commons/1/14/The_Event_2010_Intertitle.svg","date":"2023-12-25","description":"ssdfds","id":"f4450c1c-f3ae-4571-931a-f06a7c3d069c"},{"title":"32","image":"https://upload.wikimedia.org/wikipedia/commons/1/14/The_Event_2010_Intertitle.svg","date":"2023-12-28","description":"vsdvs","id":"7d6a0391-2d17-49f8-a5d3-811039654923"},{"title":"test bew","image":"https://upload.wikimedia.org/wikipedia/commons/1/14/The_Event_2010_Intertitle.svg","date":"2023-12-20","description":"dcsdcs","id":"157e4289-ba62-47d2-9a0d-dc9c9e7eaf7e"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
