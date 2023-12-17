@@ -9,7 +9,7 @@ function NewsletterSignup() {
 
   useEffect(() => {
     if(state === 'idle' && data && data.message) {
-      window.alert(data.message);
+      // window.alert(data.message);
     }
   });
 
